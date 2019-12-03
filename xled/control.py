@@ -280,7 +280,7 @@ class ControlInterface(object):
         :raises ApplicationError: on application error
         :rtype: None
         """
-        assert mode in ("movie", "demo", "off")
+        assert mode in ("movie", "demo", "off", "rt")
         json_payload = {"mode": mode}
         url = urljoin(self.base_url, "led/mode")
         response = self.session.post(url, json=json_payload)
