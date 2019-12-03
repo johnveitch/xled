@@ -462,7 +462,7 @@ class InterfaceAgent(object):
         log.debug("Getting hardware address of %s.", ip_address)
         hw_address = arpreq(ip_address)
         if is_py3 and not isinstance(hw_address, bytes):
-            hw_address = bytes(hw_address, "utf-8")
+            hw_address = bytes(str(hw_address), encoding="utf-8")
         if hw_address is None:
             log.error("Unable to get HW adress of %s.", ip_address)
             msg_parts = [b"ERROR", device_id, ip_address]
